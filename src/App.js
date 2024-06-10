@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
+import Outro from "./Components/Outro";
 import Home from "./Pages/Home";
 import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 
@@ -11,6 +12,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Outro />
       </BrowserRouter>
     </div>
   );
