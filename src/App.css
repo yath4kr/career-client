@@ -24,3 +24,9 @@ body{
   margin: 2% 10px;
   font-size: 24px;
 }
+
+.nav-links{
+  color: aliceblue;
+  text-decoration: none;
+}
+
