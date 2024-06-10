@@ -56,3 +56,42 @@ body{
   color: #5169F6;
   text-decoration: wavy;
 }
+
+.outro{
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.home-search-container{
+  width: 50%;
+  border-radius: 25px;
+  border: #5169F6 solid 1px;
+  background-color: aliceblue;
+  display: inline-block;
+  height: max-content;
+}
+
+.home-search-text{
+  font-size: 24px;
+}
+
+.home-search-input{
+  width: 90%;
+  font-size: 18px;
+  border: none;
+  padding: 5px;
+  background-color: aliceblue;
+}
+
+.home-search-button{
+  display: inline;
+  height: 100%;
+  border-radius: 50%;
+  width: 10%;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.home-search{
+  margin: 4.5% 0px;
+}
