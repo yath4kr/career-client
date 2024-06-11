@@ -107,9 +107,15 @@ body{
 .preview-card-image{
   border-radius: 50%;
   height: 150px;
-  width: 150px;
+  width: 250px;
   margin: 50px 15px;
   border: #5169F6 dashed 2px;
+  overflow: hidden;
+}
+
+.preview-card-image-tag{
+  height: 100%;
+  width: 100%;
 }
 
 .preview-card-name{
