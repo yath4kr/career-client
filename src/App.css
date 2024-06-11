@@ -95,3 +95,59 @@ body{
 .home-search{
   margin: 4.5% 0px;
 }
+
+.preview-card{
+  border: #5169F6 solid 2px;
+  display: flex;
+  background-color: #2D2D2D;
+  border-radius: 35px;
+  margin-bottom: 18px;
+}
+
+.preview-card-image{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 50px 15px;
+  border: #5169F6 dashed 2px;
+}
+
+.preview-card-name{
+  color: #5169F6;
+  font-size: 28px;
+}
+
+.preview-card-intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+}
+
+.preview-card-button{
+  cursor: pointer;
+  background-color: aliceblue;
+  color: #121212;
+  display: block;
+  width: fit-content;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.home-preview{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10% 0px;
+  width: 100%;
+}
+
+.home-preview-left{
+  margin: 2%;
+}
+
+.home-preview-right{
+  margin: 10% 2%;
+}
+
