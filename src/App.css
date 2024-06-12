@@ -11,6 +11,8 @@ body{
   color: aliceblue;
 }
 
+/* Navbar */
+
 .navbar-elements-list{
   display: flex;
   flex-flow: row-reverse;
@@ -29,6 +31,8 @@ body{
   color: aliceblue;
   text-decoration: none;
 }
+
+/* Home */
 
 .banner{
   margin-top: 20px;
@@ -109,7 +113,7 @@ body{
   height: 150px;
   width: 250px;
   margin: 50px 15px;
-  border: #5169F6 dashed 2px;
+  border: #5169F6 dashed 5px;
   overflow: hidden;
 }
 
@@ -209,4 +213,74 @@ body{
 ::-webkit-scrollbar-thumb {
   background-color: #5169F6;
   border-radius: 100px;
+}
+
+/* Instructors' Page */
+.instructors{
+  margin-top: 100px;
+}
+
+.instructors-main-heading{
+  margin: 100px 0px;
+}
+
+.instructors-main-heading-special{
+  color: #5169F6;
+}
+
+
+.instructor-box{
+  margin: 20px 0px;
+}
+
+.instructors-seperate-line{
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.instructor-inner-box{
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+}
+
+.instructor-image-box{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-position: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.instructor-image{
+  height: 100%;
+  width: 100%;
+}
+
+.instructor-details-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+  width: 50%;
+
+}
+
+.instructor-name{
+  color: #5169F6;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.instructor-details{
+  margin-top: 10px;
+  font-size: large;
+  text-align: left;
+  color: #9ca9f5;
 }

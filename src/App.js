@@ -3,7 +3,8 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Outro from "./Components/Outro";
 import Home from "./Pages/Home";
-import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Instructors from "./Pages/Instructors";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/instructors" element={<Instructors />} />
         </Routes>
         <Footer />
         <Outro />
