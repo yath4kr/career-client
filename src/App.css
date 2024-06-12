@@ -155,5 +155,44 @@ body{
 
 .home-preview-right{
   margin: 10% 2%;
+  margin-bottom: 5%;
 }
 
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #2D2D2D;
+}
+
+.footer-text{
+  font-size: 24px;
+  width: 50%;
+  padding: 5% 2%;
+  margin: 2%;
+}
+
+.footer-link{
+  margin: 4%;
+  font-size: large;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-links-container{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  min-width: fit-content;
+}
+
+.footer-link-li{
+  margin-top: 15px;
+}
+
+.footer-link-li-a{
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: x-large;
+}
