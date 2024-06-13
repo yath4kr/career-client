@@ -284,3 +284,21 @@ body{
   text-align: left;
   color: #9ca9f5;
 }
+
+.search-suggestions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-suggestion{
+  color: #121212;
+  background-color: aliceblue;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+  margin: 5px auto;
+  padding: 5px 0;
+  cursor: pointer;
+}
