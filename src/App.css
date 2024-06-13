@@ -231,6 +231,7 @@ body{
 
 .instructor-box{
   margin: 20px 0px;
+  cursor: pointer;
 }
 
 .instructors-seperate-line{
@@ -301,4 +302,45 @@ body{
   margin: 5px auto;
   padding: 5px 0;
   cursor: pointer;
+}
+
+.instructor-page-introduction-section{
+  height: 90vh;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.instructor-page-introduction-image-container{
+  height: 70%;
+  width: 30%;
+  display: flex;
+}
+
+.instructor-page-image{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: #5169F6 solid thin;
+  margin: auto auto;
+  background-position: center;
+}
+
+.instructor-page-name{
+  font-size: 50px;
+  text-align: left;
+  color: #5169F6;
+}
+
+.instructor-page-introduction-text-container{
+  height: 80%;
+  margin-left: 2%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.instructor-page-full-details{
+  font-size: 30px;
+  margin-top: 30px;
+  text-align: left;
 }

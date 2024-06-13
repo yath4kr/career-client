@@ -5,6 +5,7 @@ import Outro from "./Components/Outro";
 import Home from "./Pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Instructors from "./Pages/Instructors";
+import Instructor from "./Pages/Instructor";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/instructors" element={<Instructors />} />
+          <Route path="/instructors/" element={<Instructors />} />
+          <Route path="/instructor/:instructorId" element={<Instructor />} />
         </Routes>
         <Footer />
         <Outro />

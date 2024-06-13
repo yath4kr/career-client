@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Search from "../Components/Search";
 
 const Instructors = () => {
@@ -29,6 +30,12 @@ const Instructors = () => {
       details: instructors_details,
     },
   ];
+
+  const navigate = useNavigate();
+
+  function clickHandle(index) {
+    navigate(`/instructor/${index}`);
+  }
   return (
     <>
       <div className="instructors">
@@ -43,7 +50,13 @@ const Instructors = () => {
         <div className="instructors-list">
           {instructorsList.map((instructor, index) => {
             return (
-              <div className="instructor-box" key={index}>
+              <div
+                className="instructor-box"
+                key={index}
+                onClick={(e) => {
+                  clickHandle(index);
+                }}
+              >
                 <hr className="instructors-seperate-line" />
                 <div className="instructor-inner-box">
                   <div className="instructor-image-box">
