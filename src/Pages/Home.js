@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Search from "../Components/Search";
 
 const Home = () => {
@@ -52,6 +53,13 @@ const Home = () => {
       name: "Mayuko Inoue",
     },
   ];
+
+  const navigate = useNavigate();
+
+  function clickHandler(index) {
+    navigate(`/instructor/${index}`);
+  }
+
   return (
     <>
       <Search />
@@ -70,7 +78,12 @@ const Home = () => {
         <div className="home-preview-left">
           {featuredItems.map((featuredItem, index) => {
             return (
-              <div className="preview-card">
+              <div
+                className="preview-card"
+                onClick={(e) => {
+                  clickHandler(index);
+                }}
+              >
                 <div className="preview-card-image">
                   <img
                     src={featuredItem.imgUrl}
@@ -93,7 +106,12 @@ const Home = () => {
         <div className="home-preview-right">
           {featuredItems2.map((featuredItem, index) => {
             return (
-              <div className="preview-card">
+              <div
+                className="preview-card"
+                onClick={(e) => {
+                  clickHandler(index);
+                }}
+              >
                 <div className="preview-card-image">
                   <img
                     src={featuredItem.imgUrl}
