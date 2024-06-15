@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/instructors/" element={<Instructors />} />
           <Route path="/instructor/:instructorId" element={<Instructor />} />
+          <Route path="*" element={<h1>You are not supposed to be here!</h1>} />
         </Routes>
         <Footer />
         <Outro />
