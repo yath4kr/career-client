@@ -4,6 +4,8 @@ const Instructor = () => {
     image: "",
     details: "",
   };
+
+  const list = ["Ram", "Mohan", "Sohan"];
   return (
     <div className="instructor-page">
       <div className="instructor-page-introduction-section">
@@ -28,6 +30,11 @@ const Instructor = () => {
             and the like)
           </div>
         </div>
+      </div>
+      <div className="influencer-list1">
+        {list.map((element, index) => {
+          <div className="influencer-list-elements"></div>;
+        })}
       </div>
     </div>
   );

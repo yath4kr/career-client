@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const tabs = [
-    { route: "/signIn", tabName: "Sign In" },
+    { route: "/auth", tabName: "Sign In" },
     { route: "/about", tabName: "About" },
     { route: "/blogs", tabName: "Blogs" },
     { route: "/instructors", tabName: "Instructors" },
