@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { login } from "../Redux/slices/loginSlice";
 
 const Login = ({ setAuthState }) => {
   const [passType, setPasstype] = useState(false);
@@ -7,6 +9,7 @@ const Login = ({ setAuthState }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const url = "http://localhost:5000";
+  const dispatch = useDispatch();
 
   const idChangeHandler = (e) => {
     setId(e.target.value);
@@ -22,8 +25,9 @@ const Login = ({ setAuthState }) => {
         id,
         password,
       });
-      console.log(res);
-      console.log(res.status);
+      dispatch(login());
+      window.alert(`successfully logged in : ${res.data.message}`);
+      setErrorMessage("");
     } catch (err) {
       setErrorMessage(err.response.data.message);
     }
