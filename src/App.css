@@ -360,16 +360,16 @@ body{
 }
 
 .login-page{
+  margin-bottom: 20px;
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2%;
     border: 1px solid #5169F6;
     box-shadow: 1px 1px 15px #5169F6;
     display: flex;
     flex-direction: column;
     width: fit-content;
-    height: 50vh;
+    height: fit-content;
     padding: 5%;
     background-color: #2D2D2D;
     color: #c4ccff;
@@ -414,4 +414,15 @@ body{
   font-size: 20px;
   font-weight: bolder;  
   color: #c4ccff;
+}
+
+.login-switch-text{
+  margin-top: 10px;
+  font-size: 20px;
+  color: aliceblue;
+}
+
+.login-switch-text-special{
+  color: #5169F6;
+  cursor: pointer;
 }

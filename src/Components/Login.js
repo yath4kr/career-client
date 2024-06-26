@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Login = () => {
+const Login = ({ setAuthState }) => {
   const [passType, setPasstype] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +25,7 @@ const Login = () => {
       console.log(res);
       console.log(res.status);
     } catch (err) {
-      setErrorMessage("Something Went Wrong");
+      setErrorMessage(err.response.data.message);
     }
   };
   return (
@@ -59,6 +59,17 @@ const Login = () => {
         <button className="submit-button" onClick={submitHandler}>
           SUBMIT
         </button>
+        <span className="login-switch-text">
+          Don't have an account?{" "}
+          <span
+            className="login-switch-text-special"
+            onClick={() => {
+              setAuthState(true);
+            }}
+          >
+            Register here
+          </span>
+        </span>
       </div>
     </>
   );
