@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Instructors from "./Pages/Instructors";
 import Instructor from "./Pages/Instructor";
 import Auth from "./Pages/Auth";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/instructors/" element={<Instructors />} />
           <Route path="/instructor/:instructorId" element={<Instructor />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<h1>You are not supposed to be here!</h1>} />
         </Routes>
         <Footer />

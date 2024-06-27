@@ -1,11 +1,12 @@
+import { useCookies } from "react-cookie";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 const Navbar = () => {
-  const loginState = useSelector((state) => state.loginState);
+  const [cookies, setCookies] = useCookies(["access_token"]);
+
   return (
     <>
       <ul className="navbar-elements-list">
-        {loginState ? (
+        {cookies.access_token ? (
           <li>
             <NavLink to="/profile" className="nav-links">
               Profile

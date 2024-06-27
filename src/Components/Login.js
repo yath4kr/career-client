@@ -1,15 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { login } from "../Redux/slices/loginSlice";
+import { useCookies } from "react-cookie";
 
 const Login = ({ setAuthState }) => {
   const [passType, setPasstype] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [cookies, setCookies] = useCookies("access_token");
   const url = "http://localhost:5000";
-  const dispatch = useDispatch();
 
   const idChangeHandler = (e) => {
     setId(e.target.value);
@@ -25,7 +24,8 @@ const Login = ({ setAuthState }) => {
         id,
         password,
       });
-      dispatch(login());
+      console.log(res.data.token);
+      setCookies("access_token", res.data.token);
       window.alert(`successfully logged in : ${res.data.message}`);
       setErrorMessage("");
     } catch (err) {
@@ -39,12 +39,12 @@ const Login = ({ setAuthState }) => {
           <h1>Login</h1>
         </div>
         <div className="form-element">
-          <label for="id">Write your username or email : </label>
+          <label>Write your username or email : </label>
           <br />
           <input id="id" onChange={idChangeHandler} />
         </div>
         <div className="form-element">
-          <label for="password">Password : </label>
+          <label>Password : </label>
           <br />
           <input
             id="password"

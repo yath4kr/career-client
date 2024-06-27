@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ setAuthState }) => {
   const [passType, setPasstype] = useState(false);
@@ -10,6 +11,7 @@ const Register = ({ setAuthState }) => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const url = "http://localhost:5000";
+  const navigate = useNavigate();
 
   const usernameChangeHandler = (e) => {
     setUsername(e.target.value);
@@ -44,8 +46,8 @@ const Register = ({ setAuthState }) => {
       if (res.status === 201) {
         window.alert("Successfully Registered");
       }
+      setAuthState(false);
     } catch (err) {
-      console.log(err.response.data.message);
       setErrorMessage(err.response.data.message);
     }
   };
@@ -56,27 +58,27 @@ const Register = ({ setAuthState }) => {
           <h1>Register</h1>
         </div>
         <div className="form-element">
-          <label for="name">Name : </label>
+          <label>Name : </label>
           <br />
           <input id="name" onChange={nameChangeHandler} />
         </div>
         <div className="form-element">
-          <label for="username">Username : </label>
+          <label>Username : </label>
           <br />
           <input id="username" onChange={usernameChangeHandler} />
         </div>
         <div className="form-element">
-          <label for="email">Email : </label>
+          <label>Email : </label>
           <br />
           <input id="email" onChange={emailChangeHandler} />
         </div>
         <div className="form-element">
-          <label for="mobile">Mobile No : </label>
+          <label>Mobile No : </label>
           <br />
           <input id="mobile" onChange={mobileChangeHandler} />
         </div>
         <div className="form-element">
-          <label for="password">Password : </label>
+          <label>Password : </label>
           <br />
           <input
             id="password"
