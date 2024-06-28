@@ -7,7 +7,7 @@ const Login = ({ setAuthState }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [cookies, setCookies] = useCookies("access_token");
+  const [cookies, setCookies] = useCookies(["access_token", "user_id"]);
   const url = "http://localhost:5000";
 
   const idChangeHandler = (e) => {
@@ -26,6 +26,8 @@ const Login = ({ setAuthState }) => {
       });
       console.log(res.data.token);
       setCookies("access_token", res.data.token);
+      console.log(res.data.userId);
+      setCookies("user_id", res.data.userId);
       window.alert(`successfully logged in : ${res.data.message}`);
       setErrorMessage("");
     } catch (err) {
