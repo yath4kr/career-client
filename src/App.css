@@ -305,7 +305,8 @@ body{
 }
 
 .instructor-page-introduction-section{
-  height: 90vh;
+  min-height: 90vh;
+  height: fit-content;
   width: 80%;
   display: flex;
   margin: 0 auto;
@@ -315,6 +316,7 @@ body{
   height: 70%;
   width: 30%;
   display: flex;
+  margin-top: 10px;
 }
 
 .instructor-page-image{
@@ -486,3 +488,11 @@ body{
   background-color: #031057;
   margin-left: 2px;
 }
+
+.instructor-page-title{
+  margin-top: 20px;
+  font-size: 35px;
+  text-align: left;
+  color: #909eeb;
+}
+

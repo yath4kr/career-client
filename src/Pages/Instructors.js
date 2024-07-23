@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Search from "../Components/Search";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Instructors = () => {
+  const BASE_URL = "http://localhost:5000";
+  const [list, setList] = useState([]);
   const instructors_details =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
   const instructorsList = [
@@ -31,10 +35,22 @@ const Instructors = () => {
     },
   ];
 
+  useEffect(() => {
+    const fetchInfluncers = async () => {
+      try {
+        const res = await axios.get(`${BASE_URL}/clients/fetchInfluencers`);
+        setList(res?.data?.influencers);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchInfluncers();
+  }, []);
+
   const navigate = useNavigate();
 
-  function clickHandle(index) {
-    navigate(`/instructor/${index}`);
+  function clickHandle(id) {
+    navigate(`/instructor/${id}`);
   }
   return (
     <>
@@ -48,29 +64,27 @@ const Instructors = () => {
           of your Choice
         </h1>
         <div className="instructors-list">
-          {instructorsList.map((instructor, index) => {
+          {list?.map((instructor, index) => {
             return (
               <div
                 className="instructor-box"
                 key={index}
                 onClick={(e) => {
-                  clickHandle(index);
+                  clickHandle(instructor._id);
                 }}
               >
                 <hr className="instructors-seperate-line" />
                 <div className="instructor-inner-box">
                   <div className="instructor-image-box">
                     <img
-                      src={instructor.imgUrl}
+                      src={instructor.imageUrl}
                       alt={instructor.name}
                       className="instructor-image"
                     />
                   </div>
                   <div className="instructor-details-box">
                     <div className="instructor-name">{instructor.name}</div>
-                    <div className="instructor-details">
-                      {instructor.details}
-                    </div>
+                    <div className="instructor-details">{instructor.title}</div>
                   </div>
                 </div>
                 <hr className="instructors-seperate-line" />

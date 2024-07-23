@@ -35,7 +35,7 @@ const Register = ({ setAuthState }) => {
 
   const submitHandler = async () => {
     try {
-      const res = await axios.post(`${url}/user/register`, {
+      const res = await axios.post(`${url}/users/register`, {
         username,
         password,
         name,

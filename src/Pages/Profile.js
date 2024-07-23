@@ -18,7 +18,7 @@ const Profile = () => {
       }
       const userId = cookies.user_id;
       try {
-        const res = await axios.get(`${url}/user/${userId}`, {
+        const res = await axios.get(`${url}/users/${userId}`, {
           headers: { authorization: cookies.access_token },
         });
         setUser(res.data.user);

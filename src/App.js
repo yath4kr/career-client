@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/instructors/" element={<Instructors />} />
-          <Route path="/instructor/:instructorId" element={<Instructor />} />
+          <Route path="/instructor/:id" element={<Instructor />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<h1>You are not supposed to be here!</h1>} />

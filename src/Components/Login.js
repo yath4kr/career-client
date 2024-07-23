@@ -20,7 +20,7 @@ const Login = ({ setAuthState }) => {
 
   const submitHandler = async () => {
     try {
-      const res = await axios.post(`${url}/user/login`, {
+      const res = await axios.post(`${url}/users/login`, {
         id,
         password,
       });
