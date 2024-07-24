@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 const Instructor = () => {
   const { id } = useParams();
   const [influencer, setInfluencer] = useState(null);
+  const [books, setBooks] = useState([]);
+  const [courses, setCourses] = useState([]);
   const BASE_URL = "http://localhost:5000";
   useEffect(() => {
     const fetchInstructor = async () => {
@@ -13,6 +15,8 @@ const Instructor = () => {
           `${BASE_URL}/clients/fetchInfluencer/${id}`
         );
         setInfluencer(res.data.influencer);
+        setBooks(res.data.influencer.books);
+        setCourses(res.data.influencer.courses);
       } catch (err) {
         console.log(err);
       }
@@ -36,6 +40,50 @@ const Instructor = () => {
           <div className="instructor-page-title">{influencer.title}</div>
           <div className="instructor-page-full-details">
             {influencer?.description}
+          </div>
+          <div className="instructor-page-books-container">
+            <div className="booksSectionHeading">Books : </div>
+            <div className="bookListHolder">
+              {books?.map((book, index) => {
+                return (
+                  <div key={index} className="bookItem">
+                    <a href={`${book.url}`}>
+                      <div className="bookHolder">
+                        <img
+                          src={`${process.env.PUBLIC_URL}/book-logo.png`}
+                          alt="books"
+                          height="70spx"
+                          width="60px"
+                        />
+                      </div>
+                    </a>
+                    <div>{book.name}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="instructor-page-books-container">
+            <div className="booksSectionHeading">Courses : </div>
+            <div className="bookListHolder">
+              {courses?.map((book, index) => {
+                return (
+                  <div key={index} className="bookItem">
+                    <a href={`${book.url}`}>
+                      <div className="bookHolder">
+                        <img
+                          src={`${process.env.PUBLIC_URL}/course-logo.png`}
+                          alt="books"
+                          height="70spx"
+                          width="60px"
+                        />
+                      </div>
+                    </a>
+                    <div>{book.name}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
