@@ -110,8 +110,8 @@ body{
 
 .preview-card-image{
   border-radius: 50%;
-  height: 150px;
-  width: 250px;
+  height: 180px;
+  width: 220px;
   margin: 50px 15px;
   border: #5169F6 dashed 5px;
   overflow: hidden;
@@ -160,6 +160,9 @@ body{
 .home-preview-right{
   margin: 10% 2%;
   margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .footer{
@@ -522,8 +525,9 @@ body{
 .bookHolder{
   margin-top: 15px;
   margin-bottom: 5px;
-  height: 150px;
-  width: 100px;
+  margin-right: 5px;
+  height: 250px;
+  width: 200px;
   background-color: #2D2D2D;
   display: flex;
   align-items: center;
@@ -535,4 +539,24 @@ body{
   /* border: 2px solid blue; */
   max-width : 70vw;
   overflow: scroll;
+}
+
+.SIPage{
+  display: flex;
+  flex-direction: column;
+}
+
+.SIHeading{
+  color: #5169F6;
+}
+
+.SICatSec{
+  width: 80vw;
+  margin: auto auto;
+}
+
+.SIPara{
+  font-size: 25px;
+  margin-top: 5px;
+  text-align: left;
 }

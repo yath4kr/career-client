@@ -1,40 +1,63 @@
-import { useNavigate } from "react-router-dom";
-import Search from "../Components/Search";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Instructors = () => {
+const SearchedInstructors = () => {
+  // Extract the search parameter from useParams
+  const { search } = useParams();
+  const val = search?.toLowerCase();
   const BASE_URL = "http://localhost:5000";
+  const [catDetails, setCatDetails] = useState(null);
   const [list, setList] = useState([]);
-
-  useEffect(() => {
-    const fetchInfluncers = async () => {
-      try {
-        const res = await axios.get(`${BASE_URL}/clients/fetchInfluencers`);
-        setList(res?.data?.influencers);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchInfluncers();
-  }, []);
-
   const navigate = useNavigate();
 
   function clickHandle(id) {
     navigate(`/instructor/${id}`);
   }
+
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const res = await axios.post(`${BASE_URL}/clients/fetchCategory`, {
+          name: val,
+        });
+        if (res.status === 200) {
+          setCatDetails(res.data.category);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const fetchInfluencers = async () => {
+      try {
+        const res = await axios.post(
+          `${BASE_URL}/clients/fetchSpecialInstructors`,
+          { category: val }
+        );
+        if (res.status === 200) {
+          setList(res.data.influencers);
+          console.log(res);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchCategory();
+    fetchInfluencers();
+  }, [val]);
+
+  if (!catDetails) {
+    return <h1>Sorry, No such Details Found!</h1>;
+  }
+
   return (
-    <>
-      <div className="instructors">
-        <Search />
-        <h1 className="instructors-main-heading">
-          Learn from the{" "}
-          <span className="instructors-main-heading-special">
-            World's Best Instructor or Influencer
-          </span>{" "}
-          of your Choice
-        </h1>
+    <div className="SIPage">
+      <div className="SICatSec">
+        <h1 className="SIHeading">{catDetails.name.toUpperCase()}</h1>
+        <div className="SIPara">{catDetails.description}</div>
+      </div>
+      <div>
         <div className="instructors-list">
           {list?.map((instructor, index) => {
             return (
@@ -65,8 +88,8 @@ const Instructors = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Instructors;
+export default SearchedInstructors;

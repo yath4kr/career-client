@@ -52,8 +52,8 @@ const Instructor = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/book-logo.png`}
                           alt="books"
-                          height="70spx"
-                          width="60px"
+                          height="100px"
+                          width="90px"
                         />
                       </div>
                     </a>
@@ -74,8 +74,8 @@ const Instructor = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/course-logo.png`}
                           alt="books"
-                          height="70spx"
-                          width="60px"
+                          height="100px"
+                          width="90px"
                         />
                       </div>
                     </a>

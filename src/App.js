@@ -8,6 +8,7 @@ import Instructors from "./Pages/Instructors";
 import Instructor from "./Pages/Instructor";
 import Auth from "./Pages/Auth";
 import Profile from "./Pages/Profile";
+import SearchedInstructors from "./Pages/SearchedInstructors";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route path="/instructor/:id" element={<Instructor />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/specialInstructors/:search"
+            element={<SearchedInstructors />}
+          />
           <Route path="*" element={<h1>You are not supposed to be here!</h1>} />
         </Routes>
         <Footer />
