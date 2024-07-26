@@ -8,7 +8,7 @@ const Login = ({ setAuthState }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies, setCookies] = useCookies(["access_token", "user_id"]);
-  const url = "http://localhost:5000";
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const idChangeHandler = (e) => {
     setId(e.target.value);
@@ -20,7 +20,7 @@ const Login = ({ setAuthState }) => {
 
   const submitHandler = async () => {
     try {
-      const res = await axios.post(`${url}/users/login`, {
+      const res = await axios.post(`${BASE_URL}/users/login`, {
         id,
         password,
       });

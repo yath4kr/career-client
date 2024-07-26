@@ -3,20 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  // const categories = [
-  //   "aerospace",
-  //   "development",
-  //   "programming",
-  //   "designing",
-  //   "blockchain",
-  //   "coding",
-  //   "music",
-  //   "ethical hacking",
-  // ];
-
   const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState("");
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {

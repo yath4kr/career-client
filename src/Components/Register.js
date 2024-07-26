@@ -10,7 +10,7 @@ const Register = ({ setAuthState }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
-  const url = "http://localhost:5000";
+  const url = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
 
   const usernameChangeHandler = (e) => {

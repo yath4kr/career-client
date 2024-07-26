@@ -6,7 +6,7 @@ import axios from "axios";
 const Profile = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
-  const url = "http://localhost:5000";
+  const url = process.env.REACT_APP_BASE_URL;
   const [cookies, setCookies] = useCookies(["access_token", "user_id"]);
   useEffect(() => {
     const fetchUserData = async () => {

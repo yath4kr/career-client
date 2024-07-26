@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [featuredItems, setFeaturedItems] = useState([]);
   const [featuredItems2, setFeaturedItems2] = useState([]);
 
@@ -22,8 +22,6 @@ const Home = () => {
             influencers.slice(4, Math.min(8, influencers.length))
           );
         }
-
-        console.log(res);
       } catch (err) {
         console.log(err);
       }

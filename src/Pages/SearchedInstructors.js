@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const SearchedInstructors = () => {
-  // Extract the search parameter from useParams
   const { search } = useParams();
   const val = search?.toLowerCase();
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [catDetails, setCatDetails] = useState(null);
   const [list, setList] = useState([]);
   const navigate = useNavigate();
