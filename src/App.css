@@ -475,6 +475,7 @@ body{
 
 .profile-page-table td{
   font-size: 24px;
+  color: #909eeb;
 }
 
 .profile-page-table tr{
@@ -738,6 +739,43 @@ body{
 
   .instructor-page-full-details{
     font-size: 25px;
+  }
+
+  .profile-page-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-page-table{
+    padding: 0;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+  }
+
+  .logout-button{
+    margin-top: 20px;
+    display: flex;
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .profile-page-table tr{
+    margin: 0;
+  }
+
+  .profile-page-table th{
+    font-size: 15px;
+  }
+
+  .profile-page-table td{
+    font-size: 15px;
   }
 }
 
