@@ -7,6 +7,7 @@ const Home = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [featuredItems, setFeaturedItems] = useState([]);
   const [featuredItems2, setFeaturedItems2] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +22,7 @@ const Home = () => {
           setFeaturedItems2(
             influencers.slice(4, Math.min(8, influencers.length))
           );
+          setIsLoading(false);
         }
       } catch (err) {
         console.log(err);
@@ -35,8 +37,20 @@ const Home = () => {
     navigate(`/instructor/${id}`);
   }
 
+  if (isLoading) {
+    return (
+      <>
+        <h1>Please Wait! Loading....</h1>
+        <br />
+        <h2>
+          We are currently using free service so this might take some time!
+        </h2>
+      </>
+    );
+  }
+
   return (
-    <>
+    <div className="home-page">
       <Search />
 
       <div className="banner">
@@ -118,9 +132,9 @@ const Home = () => {
               </div>
             );
           })}
-        </div>
+        </div>{" "}
       </div>
-    </>
+    </div>
   );
 };
 export default Home;

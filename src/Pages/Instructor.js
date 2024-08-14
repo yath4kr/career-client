@@ -29,7 +29,6 @@ const Instructor = () => {
       <div className="instructor-page-introduction-section">
         <div className="instructor-page-introduction-image-container">
           <img
-            // src="https://www.tryswift.co/assets/images/speakers/tokyo2019/speakers/mayuko_inoue.jpg"
             src={`${influencer?.imageUrl}`}
             className="instructor-page-image"
             alt={`${influencer?.name}`}

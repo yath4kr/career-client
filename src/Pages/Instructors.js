@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 const Instructors = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchInfluncers = async () => {
       try {
         const res = await axios.get(`${BASE_URL}/clients/fetchInfluencers`);
         setList(res?.data?.influencers);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -35,35 +37,41 @@ const Instructors = () => {
           </span>{" "}
           of your Choice
         </h1>
-        <div className="instructors-list">
-          {list?.map((instructor, index) => {
-            return (
-              <div
-                className="instructor-box"
-                key={index}
-                onClick={(e) => {
-                  clickHandle(instructor._id);
-                }}
-              >
-                <hr className="instructors-seperate-line" />
-                <div className="instructor-inner-box">
-                  <div className="instructor-image-box">
-                    <img
-                      src={instructor.imageUrl}
-                      alt={instructor.name}
-                      className="instructor-image"
-                    />
+        {loading ? (
+          <h3>Loading, Please Wait...!</h3>
+        ) : (
+          <div className="instructors-list">
+            {list?.map((instructor, index) => {
+              return (
+                <div
+                  className="instructor-box"
+                  key={index}
+                  onClick={(e) => {
+                    clickHandle(instructor._id);
+                  }}
+                >
+                  <hr className="instructors-seperate-line" />
+                  <div className="instructor-inner-box">
+                    <div className="instructor-image-box">
+                      <img
+                        src={instructor.imageUrl}
+                        alt={instructor.name}
+                        className="instructor-image"
+                      />
+                    </div>
+                    <div className="instructor-details-box">
+                      <div className="instructor-name">{instructor.name}</div>
+                      <div className="instructor-details">
+                        {instructor.title}
+                      </div>
+                    </div>
                   </div>
-                  <div className="instructor-details-box">
-                    <div className="instructor-name">{instructor.name}</div>
-                    <div className="instructor-details">{instructor.title}</div>
-                  </div>
+                  <hr className="instructors-seperate-line" />
                 </div>
-                <hr className="instructors-seperate-line" />
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </>
   );

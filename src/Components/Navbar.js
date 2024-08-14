@@ -4,7 +4,7 @@ const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
 
   return (
-    <>
+    <div className="navbar">
       <ul className="navbar-elements-list">
         {cookies.access_token ? (
           <li>
@@ -19,17 +19,6 @@ const Navbar = () => {
             </NavLink>
           </li>
         )}
-
-        <li>
-          <NavLink to="/about" className="nav-links">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/blogs" className="nav-links">
-            Blogs
-          </NavLink>
-        </li>
         <li>
           <NavLink to="/instructors" className="nav-links">
             Instructors
@@ -41,7 +30,7 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 export default Navbar;

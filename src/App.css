@@ -9,6 +9,7 @@
 body{
   background-color: #121212;
   color: aliceblue;
+  width: fit-content;
 }
 
 /* Navbar */
@@ -16,6 +17,7 @@ body{
 .navbar-elements-list{
   display: flex;
   flex-flow: row-reverse;
+  width: 90vw;
   list-style-type: none;
   height: fit-content;
   padding-right: 2%;
@@ -24,12 +26,13 @@ body{
 .navbar-elements-list > li{
   display: inline;
   margin: 2% 10px;
-  font-size: 24px;
 }
 
 .nav-links{
-  color: aliceblue;
+  color: aliceblue; 
   text-decoration: none;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 /* Home */
@@ -42,7 +45,7 @@ body{
 }
 
 .web-intro{
-  font-size: 48px;
+  font-size: xx-large;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -67,7 +70,7 @@ body{
 }
 
 .home-search-container{
-  width: 50%;
+  width: 50vw;
   border-radius: 25px;
   border: #5169F6 solid 1px;
   background-color: aliceblue;
@@ -217,6 +220,7 @@ body{
   background-color: #5169F6;
   border-radius: 100px;
 }
+
 
 /* Instructors' Page */
 .instructors{
@@ -560,3 +564,181 @@ body{
   margin-top: 5px;
   text-align: left;
 }
+/* Media Queries */
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+
+  .navbar{
+    margin: 0px;
+    width: 90vw;
+    overflow-x: hidden;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-elements-list{
+    display: flex;
+    justify-content: space-around;
+    max-width: fit-content;
+    padding: 0px;
+    margin: 0 auto;
+  }
+
+
+  .nav-links{
+    font-size: small;
+  }
+
+    .banner {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .banner-pic img {
+      width: 90%;
+      /* Adjust image width for smaller screens */
+    }
+  
+    .home-preview {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .home-preview-left,
+    .home-preview-right {
+      width: 100%;
+      /* Full width on mobile */
+      margin: 0;
+    }
+  
+    .preview-card {
+      flex-direction: column;
+      width: 80vw;
+      margin: 10px auto;
+      padding: 10px 0;
+    }
+  
+    .preview-card-image {
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+    }
+  
+    .preview-card-name {
+      font-size: 20px;
+    }
+  
+    .home-search-container {
+      width: 90%;
+    }
+  
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-links-container {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .instructor-inner-box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .home-search{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .home-search-input{
+      width: 80%;
+    }
+
+    .instructors-list {
+      margin: 0 0;
+    }
+    
+    .instructor-box {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+    }
+    
+    .instructor-inner-box {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      width: 100%;
+    }
+    
+  .instructor-details-box {
+    width: 100%;
+    align-items: center;
+  }
+    
+  .instructor-details {
+    margin: 0 auto;
+  }
+
+  .instructor-page{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .instructor-page-introduction-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .instructor-page-introduction-image-container{
+    margin: 20px auto;
+    display: flex;
+    width: fit-content;
+  }
+
+  .search-suggetions{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+  }
+
+  .search-suggestion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    font-size: medium;
+  }
+
+  .bookListHolder{
+    max-width: 95vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .instructor-page-books-container{
+    display: flex;
+  }
+
+  .instructor-page-name{
+    font-size: 35px;
+  }
+
+  .instructor-page-title{
+    font-size: 25px;
+  }
+
+  .instructor-page-full-details{
+    font-size: 25px;
+  }
+}
+
+  

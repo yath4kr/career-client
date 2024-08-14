@@ -54,6 +54,7 @@ const Search = () => {
             onChange={(e) => {
               searchHandle(e);
             }}
+            autoComplete="off"
           />
           <div className="home-search-button" onClick={dispatcher}>
             <img src="./search-icon.png" height="25px" width="25px" />

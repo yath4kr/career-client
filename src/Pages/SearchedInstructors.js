@@ -9,6 +9,7 @@ const SearchedInstructors = () => {
   const [catDetails, setCatDetails] = useState(null);
   const [list, setList] = useState([]);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   function clickHandle(id) {
     navigate(`/instructor/${id}`);
@@ -37,6 +38,7 @@ const SearchedInstructors = () => {
         if (res.status === 200) {
           setList(res.data.influencers);
           console.log(res);
+          setLoading(false);
         }
       } catch (err) {
         console.log(err);
@@ -45,6 +47,10 @@ const SearchedInstructors = () => {
     fetchCategory();
     fetchInfluencers();
   }, [val]);
+
+  if (loading) {
+    return <h1>Loading....Please Wait!!</h1>;
+  }
 
   if (!catDetails) {
     return <h1>Sorry, No such Details Found!</h1>;
